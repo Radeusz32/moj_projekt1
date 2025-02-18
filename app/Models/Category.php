@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Post extends Model
+class Category extends Model
 {
     use HasFactory, SoftDeletes;
     
-    protected $fillable = ['title', 'content'];
+    protected $fillable = ['name'];
 
-    public function categories()
+    public function posts()
     {
-        return $this->belongsToMany(Category::class)->withTimestamps()->withTrashed();
+        return $this->belongsToMany(Post::class)->withTimestamps()->withTrashed();
     }
-
 }
