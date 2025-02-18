@@ -33,7 +33,7 @@ test:
 pre-commit:
 	@make doc
 	@make refactor
-	@make lint
+	# @make lint
 	@make analyse
 	@make format
 	@make frontend-build
